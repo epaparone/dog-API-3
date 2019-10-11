@@ -25,11 +25,18 @@ function displayImage(responseJson) {
     }
 }
 
+function handleInput() {
+  //$('.breed-input').click(event => {
+    $('.dog-img').empty();
+  //})
+}
+
 function handleForm() {
   // this function disables the default form behavior
   // it records the number input by the user
   $('form').submit(event => {
     event.preventDefault();
+    handleInput();
     getDogImage();
   });
 }
@@ -37,5 +44,6 @@ function handleForm() {
 
 $(function() {
     console.log('App loaded! Waiting for submit!');
+    //handleInput();
     handleForm();
   });
